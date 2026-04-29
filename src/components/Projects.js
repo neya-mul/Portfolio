@@ -130,7 +130,7 @@ function ProjectCard({ project, index }) {
   return (
     <div
       className="card-hover bg-card rounded-2xl p-6 flex flex-col reveal"
-      style={{ transitionDelay: `${index * 100}ms` }}
+      // style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Emoji + title */}
       <div className="flex items-start justify-between mb-4">

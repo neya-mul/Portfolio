@@ -28,7 +28,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#home" className="text-xl font-bold gradient-text">
-          Neyamul<span className="text-white">.</span>
+          Neyamul<span className="text-white"></span>
         </a>
 
         {/* Desktop links */}
