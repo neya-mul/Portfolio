@@ -4,12 +4,14 @@ import { useEffect, useRef, useState } from 'react'
 
 // Your skill data - update the levels anytime!
 const skills = [
-  { name: 'HTML',       level: 85, color: '#f97316' },
-  { name: 'CSS',        level: 80, color: '#3b82f6' },
-  { name: 'JavaScript', level: 65, color: '#facc15' },
-  { name: 'React.js',   level: 60, color: '#61dafb' },
+  { name: 'HTML5', level: 85, color: '#f97316' },
+  { name: 'CSS3', level: 80, color: '#3b82f6' },
   { name: 'Tailwind CSS', level: 70, color: '#38bdf8' },
+  { name: 'JavaScript-ES6', level: 65, color: '#facc15' },
+  { name: 'React.js', level: 60, color: '#61dafb' },
+  { name: 'Next.js', level: 50, color: '#FFC0CA' },
   { name: 'Git & GitHub', level: 60, color: '#f97316' },
+  { name: 'MongoDB', level: 10, color: '#a97316' },
 ]
 
 // Tech tools shown as badges
@@ -92,7 +94,7 @@ export default function Skills() {
                   <span className="text-purple-400">→</span> Next.js & Server Components
                 </li>
                 <li className="flex items-center gap-2">
-                  <span className="text-purple-400">→</span> TypeScript
+                  <span className="text-purple-400">→</span> MongoDB
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="text-purple-400">→</span> Advanced React Patterns

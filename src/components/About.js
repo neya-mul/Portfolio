@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { SiNextdotjs } from 'react-icons/si'
 
 export default function About() {
   const sectionRef = useRef(null)
@@ -46,7 +47,7 @@ export default function About() {
               <div className="grid grid-cols-2 gap-6">
                 <StatCard number="24+" label="Repositories" emoji="📦" />
                 <StatCard number="100%" label="Dedication" emoji="💪" />
-                <StatCard number="React" label="Main Stack" emoji="⚛️" />
+                <StatCard number="Next JS" label="Main Stack" emoji="🔺" />
                 <StatCard number="BD" label="Bangladesh" emoji="🌏" />
               </div>
 
