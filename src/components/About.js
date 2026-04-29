@@ -1,0 +1,119 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
+
+export default function About() {
+  const sectionRef = useRef(null)
+
+  // Reveal animation when section enters the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    // Observe all elements with class "reveal"
+    const reveals = sectionRef.current?.querySelectorAll('.reveal')
+    reveals?.forEach((el) => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section id="about" ref={sectionRef} className="py-24">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Section heading */}
+        <div className="text-center mb-16 reveal">
+          <p className="text-purple-400 text-sm tracking-widest uppercase mb-3">Who I Am</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white">
+            About <span className="gradient-text">Me</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+
+          {/* Left - visual card */}
+          <div className="reveal">
+            <div className="card-hover bg-card rounded-3xl p-8">
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 gap-6">
+                <StatCard number="24+" label="Repositories" emoji="📦" />
+                <StatCard number="100%" label="Dedication" emoji="💪" />
+                <StatCard number="React" label="Main Stack" emoji="⚛️" />
+                <StatCard number="BD" label="Bangladesh" emoji="🌏" />
+              </div>
+
+              {/* Quote */}
+              <div className="mt-8 p-4 border border-purple-700/20 rounded-2xl bg-purple-900/10">
+                <p className="text-gray-400 text-sm italic leading-relaxed">
+                  "Beginner to coding, but passionate about building great things on the web."
+                </p>
+                <p className="text-purple-400 text-sm mt-2 font-semibold">— Neyamul Islam</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - text content */}
+          <div className="reveal">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Hi! I'm <span className="text-purple-400">Neyamul Islam</span>
+            </h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              I'm a frontend developer from Bangladesh with a passion for building
+              beautiful, functional web experiences. I love turning ideas into reality
+              using code and design.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              I work with HTML, CSS, JavaScript, and React to create responsive and
+              visually appealing websites. I'm always learning new technologies to
+              level up my skills.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              When I'm not coding, I'm a big anime fan — you might have noticed my
+              Attack on Titan shirt! 😄
+            </p>
+
+            {/* Info list */}
+            <div className="space-y-3">
+              <InfoRow label="Name" value="Neyamul Islam" />
+              <InfoRow label="Location" value="Bangladesh 🇧🇩" />
+              <InfoRow label="Focus" value="Frontend Development" />
+              <InfoRow label="Status" value="Open to Opportunities" highlight />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Small stat card component
+function StatCard({ number, label, emoji }) {
+  return (
+    <div className="bg-dark/50 rounded-2xl p-4 text-center">
+      <div className="text-2xl mb-1">{emoji}</div>
+      <div className="text-xl font-bold text-white">{number}</div>
+      <div className="text-xs text-gray-500">{label}</div>
+    </div>
+  )
+}
+
+// Info row used in the about text
+function InfoRow({ label, value, highlight }) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="text-gray-600 w-24 text-sm">{label}:</span>
+      <span className={`text-sm font-medium ${highlight ? 'text-green-400' : 'text-white'}`}>
+        {value}
+      </span>
+    </div>
+  )
+}
