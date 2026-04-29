@@ -1,4 +1,6 @@
 // Simple footer with links and copyright
+import logo from "../../public/logo.png"
+import Image from "next/image"
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -10,7 +12,8 @@ export default function Footer() {
 
           {/* Logo */}
           <a href="#home" className="text-lg font-bold gradient-text">
-            Neyamul<span className="text-white">.</span>
+            {/* Neyamul<span className="text-white">.</span> */}
+            <Image src={logo} height={200} width={120} className='animate-pulse' />
           </a>
 
           {/* Copyright */}

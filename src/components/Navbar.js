@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" className="text-xl font-bold gradient-text">
           {/* Neyamul<span className="text-white"></span> */}
-       <Image src={logo} height={200} width={120} className='animate-pulse'/>
+       <Image src={logo} height={120} width={120}  className='w-full h-auto object-contain animate-pulse'/>
         </a>
 
         {/* Desktop links */}
