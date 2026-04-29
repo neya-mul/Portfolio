@@ -1,6 +1,8 @@
 'use client'
-
+import logo from '../../public/logo.png'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
+
 
 // Navigation links - each one scrolls to a section by ID
 const navLinks = [
@@ -28,7 +30,8 @@ export default function Navbar() {
 
         {/* Logo */}
         <a href="#home" className="text-xl font-bold gradient-text">
-          Neyamul<span className="text-white"></span>
+          {/* Neyamul<span className="text-white"></span> */}
+       <Image src={logo} height={200} width={120} className='animate-pulse'/>
         </a>
 
         {/* Desktop links */}
