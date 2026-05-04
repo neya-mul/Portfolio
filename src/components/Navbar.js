@@ -6,11 +6,12 @@ import { useState, useEffect } from 'react'
 
 // Navigation links - each one scrolls to a section by ID
 const navLinks = [
-  { label: 'Home',     href: '#home' },
-  { label: 'About',    href: '#about' },
-  { label: 'Skills',   href: '#skills' },
+  { label: 'Home', href: '#home' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Education', href: '#education' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Contact',  href: '#contact' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -31,7 +32,7 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#home" className="text-xl font-bold gradient-text">
           {/* Neyamul<span className="text-white"></span> */}
-       <Image src={logo} height={120} width={120}  className='w-full h-auto object-contain animate-pulse'/>
+          <Image src={logo} height={120} width={120} className='w-full h-auto object-contain animate-pulse' />
         </a>
 
         {/* Desktop links */}

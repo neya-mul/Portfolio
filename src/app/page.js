@@ -7,6 +7,7 @@ import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import AnimatedBackground from '../components/AnimatedBackground'
 import CustomCursor from '../components/Cursor'
+import Education from '../components/Education'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <Education></Education>
         <Projects />
         <Contact />
         <Footer />
