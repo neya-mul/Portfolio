@@ -1,3 +1,4 @@
+'use client'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -8,22 +9,29 @@ import Footer from '../components/Footer'
 import AnimatedBackground from '../components/AnimatedBackground'
 import CustomCursor from '../components/Cursor'
 import Education from '../components/Education'
+import SplashScreen from '../components/SplashScreen'
+import { useState } from 'react'
 
 export default function Home() {
+  const [splashDone, setSplashDone] = useState(false)
+
   return (
     <main>
-      {/* Animated background - sits behind everything */}
+      {/* Splash sits on top, vanishes after 3 seconds */}
+      {!splashDone && (
+        <SplashScreen onFinished={() => setSplashDone(true)} />
+      )}
+
+      {/* Content is ALWAYS rendered underneath */}
       <AnimatedBackground />
-      <CustomCursor></CustomCursor>
-      {/* Navigation bar at the top */}
+      <CustomCursor />
       <Navbar />
 
-      {/* All sections wrapped in content layer */}
       <div className="content">
         <Hero />
         <About />
         <Skills />
-        <Education></Education>
+        <Education />
         <Projects />
         <Contact />
         <Footer />
