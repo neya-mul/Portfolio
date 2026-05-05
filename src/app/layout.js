@@ -3,6 +3,9 @@ import './globals.css'
 export const metadata = {
   title: 'Neyamul Islam | Frontend Developer',
   description: 'Portfolio of Neyamul Islam - Frontend Developer from Bangladesh',
+  icons:{
+    icon:'/logo.png'
+  }
 }
 
 export default function RootLayout({ children }) {
