@@ -65,8 +65,8 @@ export default function Hero() {
 
             {/* Typewriter role text */}
             <div className="flex items-center gap-2 mb-6 h-10">
-              <span className="text-gray-400 text-xl">I am a </span>
-              <span className="text-purple-400 text-xl font-semibold typewriter">
+              <span className="text-gray-400 text-xl whitespace-nowrap">I am a </span>
+              <span className="text-purple-400 text-xl font-semibold typewriter whitespace-nowrap min-w-[280px] inline-block">
                 {displayText}
               </span>
             </div>
