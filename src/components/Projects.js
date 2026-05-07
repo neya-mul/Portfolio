@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { CgWebsite } from 'react-icons/cg'
 import { FaBook, FaBookOpen } from 'react-icons/fa'
 import { GiArtificialIntelligence } from 'react-icons/gi'
 import { IoMdAppstore } from 'react-icons/io'
+import { MdOutlineAnimation } from 'react-icons/md'
 
 // Your GitHub projects - React projects and other notable ones
 // Add more or update links as you build new projects!
@@ -45,21 +47,21 @@ const projects = [
     color: '#ec4899',
   },
   {
-    title: 'Neon Heart Animation',
+    title: 'TechWave',
     description:
-      'A pure CSS/JS animation project with a glowing neon heart effect. A showcase of creative CSS animation skills.',
-    tags: ['JavaScript', 'CSS'],
-    emoji: '💜',
-    github: 'https://github.com/neya-mul/Neon-heart-animation',
+      'A pure responsive project mada by HTML5 and CSS3.',
+    tags: ['HTML5', 'CSS3'],
+    emoji: <MdOutlineAnimation />,
+    github: 'https://github.com/neya-mul/Assignment-2',
     color: '#a78bfa',
   },
   {
-    title: 'CSS Animations',
+    title: 'G3 Architects',
     description:
-      'A collection of creative CSS animations and effects. Demonstrates advanced CSS keyframe animations and transitions.',
-    tags: ['HTML', 'CSS'],
-    emoji: '✨',
-    github: 'https://github.com/neya-mul/Animation',
+      'A pure responsive landing practice project',
+    tags: ['HTM5L', 'CSS3'],
+    emoji: <CgWebsite />,
+    github: 'https://github.com/neya-mul/G3-Architects',
     color: '#facc15',
   },
 ]
