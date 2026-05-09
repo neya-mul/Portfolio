@@ -5,7 +5,7 @@ export default function SplashScreen({ onFinished }) {
 
   useEffect(() => {
     // Start fading after 3 seconds
-    const fadeTimer = setTimeout(() => setFadeOut(true), 3000);
+    const fadeTimer = setTimeout(() => setFadeOut(true), 2000);
     // Fully remove after fade completes
     const doneTimer = setTimeout(() => onFinished?.(), 4300);
 
@@ -61,7 +61,7 @@ export default function SplashScreen({ onFinished }) {
         fontWeight: 300,
         fontSize: "1.1rem"
       }}>
-        Full-Stack Developer & Designer
+        MERN-Stack Developer & Designer
       </p>
     </div>
   );

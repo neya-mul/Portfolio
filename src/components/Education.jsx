@@ -14,7 +14,7 @@ const educationData = [
     },
     {
         degree: 'Secondary School Certificate (SSC)',
-        institution: 'Your School Name',
+        institution: 'Kazi Kamoruddin Govt. Institution, Munshiganj',
         year: '2021 - 2023',
         description: 'Business Studies group. Achieved good results with strong foundation in Accounting and Finance.',
         grade: 'GPA : 4.22/5.00',
