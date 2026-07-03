@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 // Words that cycle in the typewriter animation
@@ -122,10 +123,11 @@ export default function Hero() {
               <div className="absolute -inset-6 rounded-full border border-purple-700/10" />
 
               {/* Profile photo */}
-              <img
+              <Image
+                width={300} height={600}
                 src="/profile.png"
                 alt="Neyamul Islam"
-                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover object-top border-4 border-purple-700/50 relative z-10"
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-purple-700/50 relative z-10"
               />
 
               {/* Floating badge */}
