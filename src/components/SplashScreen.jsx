@@ -5,7 +5,7 @@ export default function SplashScreen({ onFinished }) {
 
   useEffect(() => {
     // Start fading after 3 seconds
-    const fadeTimer = setTimeout(() => setFadeOut(true), 2000);
+    const fadeTimer = setTimeout(() => setFadeOut(true), 3000);
     // Fully remove after fade completes
     const doneTimer = setTimeout(() => onFinished?.(), 4300);
 

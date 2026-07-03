@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from 'react'
 import { SiNextdotjs } from 'react-icons/si'
+import { FiPackage } from 'react-icons/fi'
+import { FaDumbbell, FaGlobeAsia, FaMapMarkerAlt, FaSmileBeam } from 'react-icons/fa'
 
 export default function About() {
   const sectionRef = useRef(null)
@@ -45,10 +47,10 @@ export default function About() {
             <div className="card-hover bg-card rounded-3xl p-8">
               {/* Stats grid */}
               <div className="grid grid-cols-2 gap-6">
-                <StatCard number="24+" label="Repositories" emoji="📦" />
-                <StatCard number="100%" label="Dedication" emoji="💪" />
-                <StatCard number="Next JS" label="Main Stack" emoji="🔺" />
-                <StatCard number="BD" label="Bangladesh" emoji="🌏" />
+                <StatCard number="24+" label="Repositories" icon={<FiPackage />} />
+                <StatCard number="100%" label="Dedication" icon={<FaDumbbell />} />
+                <StatCard number="Next JS" label="Main Stack" icon={<SiNextdotjs />} />
+                <StatCard number="BD" label="Bangladesh" icon={<FaGlobeAsia />} />
               </div>
 
               {/* Quote */}
@@ -67,7 +69,7 @@ export default function About() {
               Hi! I'm <span className="text-purple-400">Neyamul Islam</span>
             </h3>
             <p className="text-gray-400 leading-relaxed mb-4">
-              I'm a frontend developer from Bangladesh with a passion for building
+              I'm a MERN Stack developer from Bangladesh with a passion for building
               beautiful, functional web experiences. I love turning ideas into reality
               using code and design.
             </p>
@@ -76,16 +78,23 @@ export default function About() {
               visually appealing websites. I'm always learning new technologies to
               level up my skills.
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-8 flex items-center gap-2">
               When I'm not coding, I'm a big anime fan — you might have noticed my
-              Attack on Titan shirt! 😄
+              Attack on Titan shirt! 
             </p>
 
             {/* Info list */}
             <div className="space-y-3">
               <InfoRow label="Name" value="Neyamul Islam" />
-              <InfoRow label="Location" value="Bangladesh 🇧🇩" />
-              <InfoRow label="Focus" value="Frontend Development" />
+              <InfoRow
+                label="Location"
+                value={
+                  <span className="flex items-center gap-1.5">
+                    Bangladesh <FaMapMarkerAlt className="text-purple-400" size={12} />
+                  </span>
+                }
+              />
+              <InfoRow label="Focus" value="MERN Stack" />
               <InfoRow label="Status" value="Open to Opportunities" highlight />
             </div>
           </div>
@@ -97,10 +106,10 @@ export default function About() {
 }
 
 // Small stat card component
-function StatCard({ number, label, emoji }) {
+function StatCard({ number, label, icon }) {
   return (
     <div className="bg-dark/50 rounded-2xl p-4 text-center">
-      <div className="text-2xl mb-1">{emoji}</div>
+      <div className="text-2xl mb-1 flex justify-center text-purple-400">{icon}</div>
       <div className="text-xl font-bold text-white">{number}</div>
       <div className="text-xs text-gray-500">{label}</div>
     </div>

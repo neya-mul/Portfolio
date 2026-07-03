@@ -1,15 +1,28 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { GraduationCap, Check, ArrowRight, Circle, Globe, Rocket } from 'lucide-react'
+import { FaUniversity, FaLaptopCode, FaReact, FaJs } from 'react-icons/fa'
+import { LiaUniversitySolid } from 'react-icons/lia'
+import { SiExpress, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
 
 const educationData = [
+    {
+        degree: 'Bachelors of Business Administration (BBA)',
+        institution: 'Govt. Haraganga College, Munshiganj',
+        year: '2025 - 2026',
+        description: 'Currently pursuing my Bachelors degree with a major in Accounting.',
+        grade: 'Ongoing',
+        icon: <GraduationCap size={20} />,
+        color: '#22c55e',
+    },
     {
         degree: 'Higher Secondary Certificate (HSC)',
         institution: 'Govt. Haraganga College, Munshiganj',
         year: '2023 - 2025',
         description: 'Business Studies group. Focused on Accounting, Management, and Finanece.',
         grade: 'GPA : 4.42/5.00',
-        emoji: '🎓',
+        icon: <GraduationCap size={20} />,
         color: '#7c3aed',
     },
     {
@@ -18,18 +31,19 @@ const educationData = [
         year: '2021 - 2023',
         description: 'Business Studies group. Achieved good results with strong foundation in Accounting and Finance.',
         grade: 'GPA : 4.22/5.00',
-        emoji: '🏫',
+        icon: <FaUniversity size={18} />,
         color: '#3b82f6',
     },
-]
 
+]
 const coursesData = [
-    { name: 'Complete Web Development', platform: 'Programming Hero', emoji: '💻', year: '2026' },
-    { name: 'React JS Masterclass', platform: 'Programming Hero', emoji: '⚛️', year: '2026' },
-    { name: 'Tailwind CSS Full Course', platform: 'Programming Hero', emoji: '🎨', year: '2026' },
-    { name: 'JavaScript ES6+', platform: 'Programming Hero', emoji: '📜', year: '2026' },
+    { name: 'Complete Web Development', platform: 'Programming Hero', icon: <FaLaptopCode />, year: '2026' },
+    { name: 'React JS Masterclass', platform: 'Programming Hero', icon: <FaReact />, year: '2026' },
+    { name: 'Next.js Complete Course', platform: 'Programming Hero', icon: <SiNextdotjs />, year: '2026' },
+    { name: 'Tailwind CSS Full Course', platform: 'Programming Hero', icon: <SiTailwindcss />, year: '2026' },
+    { name: 'JavaScript ES6+', platform: 'Programming Hero', icon: <FaJs />, year: '2026' },
+    { name: 'Node.js & Express.js', platform: 'Programming Hero', icon: <SiExpress />, year: '2026' },
 ]
-
 export default function Education() {
     const sectionRef = useRef(null)
 
@@ -67,7 +81,8 @@ export default function Education() {
                     {/* Left - Academic timeline */}
                     <div className="reveal">
                         <h3 className="text-xl font-bold text-white mb-8 flex items-center gap-2">
-                            🏛️ Academic Background
+                            <LiaUniversitySolid />
+                            Academic Background
                         </h3>
                         <div className="relative">
                             {/* Vertical line */}
@@ -83,7 +98,7 @@ export default function Education() {
                     {/* Right - Online Courses */}
                     <div className="reveal">
                         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                            🌐 Online Courses
+                            <Globe size={20} className="text-purple-400" /> Online Courses
                         </h3>
                         <div className="space-y-3">
                             {coursesData.map((course, i) => (
@@ -98,7 +113,7 @@ export default function Education() {
                 <div className="reveal flex justify-center">
                     <div className="card-hover bg-card rounded-2xl p-8 border border-purple-700/20 w-full max-w-lg">
                         <h4 className="text-white font-bold text-lg mb-6 flex items-center justify-center gap-2">
-                            <span>🚀</span> Self Learning Goals
+                            <Rocket size={18} className="text-purple-400" /> Self Learning Goals
                         </h4>
                         <div className="space-y-3">
                             <GoalItem done label="HTML & CSS Fundamentals" />
@@ -107,7 +122,7 @@ export default function Education() {
                             <GoalItem done label="Tailwind CSS" />
                             <GoalItem label="Next.js" active />
                             <GoalItem label="TypeScript" />
-                            <GoalItem label="Node.js & Express" />
+                            <GoalItem label="Node.js & Express" active/>
                             <GoalItem label="MongoDB" active />
                         </div>
                     </div>
@@ -123,10 +138,10 @@ function TimelineItem({ edu }) {
     return (
         <div className="relative pl-14">
             <div
-                className="absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center text-lg border-2"
-                style={{ backgroundColor: `${edu.color}25`, borderColor: edu.color }}
+                className="absolute left-0 top-1 w-10 h-10 rounded-full flex items-center justify-center border-2"
+                style={{ backgroundColor: `${edu.color}25`, borderColor: edu.color, color: edu.color }}
             >
-                {edu.emoji}
+                {edu.icon}
             </div>
             <div className="card-hover bg-card rounded-2xl p-5">
                 <div className="flex items-start justify-between gap-2 mb-2">
@@ -151,7 +166,7 @@ function CourseCard({ course }) {
     return (
         <div className="card-hover bg-card rounded-xl px-4 py-3 flex items-center justify-between">
             <div className="flex items-center gap-3">
-                <span className="text-xl">{course.emoji}</span>
+                <span className="text-xl text-purple-400">{course.icon}</span>
                 <div>
                     <p className="text-white text-sm font-medium">{course.name}</p>
                     <p className="text-gray-600 text-xs">{course.platform}</p>
@@ -166,12 +181,12 @@ function CourseCard({ course }) {
 function GoalItem({ label, done, active }) {
     return (
         <div className="flex items-center gap-3">
-            <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 text-xs
+            <div className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0
         ${done ? 'bg-green-500/20 text-green-400' :
                     active ? 'bg-purple-500/20 text-purple-400 animate-pulse' :
                         'bg-gray-800 text-gray-600'}`}
             >
-                {done ? '✓' : active ? '→' : '○'}
+                {done ? <Check size={12} /> : active ? <ArrowRight size={12} /> : <Circle size={8} />}
             </div>
             <span className={`text-sm
         ${done ? 'text-gray-400 line-through' :
