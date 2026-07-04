@@ -48,9 +48,9 @@ export default function Hero() {
   }, [displayText, isDeleting, currentRole])
 
   return (
-    <section id="home" className="min-h-screen flex  items-center pt-20  mt-20">
+    <section id="home" className="min-h-screen flex items-center pt-20 mt-20">
       <div className="max-w-6xl mx-auto px-6 w-full">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
 
           {/* Left side - text content */}
           <div className="flex-1 animate-fade-in">
@@ -117,21 +117,23 @@ export default function Hero() {
           {/* Right side - photo */}
           <div className="flex-shrink-0 animate-float">
             <div className="relative">
-              {/* Glowing ring around photo */}
+              {/* Glowing rings around photo */}
               <div className="absolute inset-0 rounded-full animate-glow" />
-              <div className="absolute -inset-3 rounded-full border border-purple-700/30 animate-spin-slow" />
-              <div className="absolute -inset-6 rounded-full border border-purple-700/10" />
+              <div className="absolute -inset-4 rounded-full border border-purple-700/30 animate-spin-slow" />
+              <div className="absolute -inset-8 rounded-full border border-purple-700/10" />
 
-              {/* Profile photo */}
+              {/* Profile photo - ENLARGED SIZE */}
               <Image
-                width={300} height={600}
+                width={450}
+                height={450}
                 src="/profile.png"
                 alt="Neyamul Islam"
-                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-purple-700/50 relative z-10"
+                className="w-70 h-70 md:w-[450px] md:h-[450px] rounded-full object-cover border-4 border-purple-700/50 relative z-10"
+                priority
               />
 
               {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-card border border-purple-700/40 rounded-xl px-4 py-2 z-20">
+              <div className="absolute bottom-2 -right-2 bg-card border border-purple-700/40 rounded-xl px-4 py-2 z-20 shadow-xl">
                 <p className="text-xs text-gray-400">Based in</p>
                 <p className="text-sm font-bold text-white">🇧🇩 Bangladesh</p>
               </div>

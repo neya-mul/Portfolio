@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { FaGlobeAmericas, FaLinkedin, FaGithub, FaInstagram, FaCheckCircle } from 'react-icons/fa'
 
 export default function Contact() {
   const sectionRef = useRef(null)
@@ -62,24 +63,24 @@ export default function Contact() {
 
             <div className="space-y-4 mb-8">
               <ContactItem
-                emoji="🌍"
+                icon={<FaGlobeAmericas />}
                 label="Location"
                 value="Bangladesh"
               />
               <ContactItem
-                emoji="💼"
+                icon={<FaLinkedin />}
                 label="LinkedIn"
                 value="linkedin.com/in/neya-mul"
                 href="https://www.linkedin.com/in/neya-mul/"
               />
               <ContactItem
-                emoji="🐙"
+                icon={<FaGithub />}
                 label="GitHub"
                 value="github.com/neya-mul"
                 href="https://github.com/neya-mul"
               />
               <ContactItem
-                emoji="📸"
+                icon={<FaInstagram />}
                 label="Instagram"
                 value="@n.for.neyamul"
                 href="https://www.instagram.com/n.for.neyamul"
@@ -140,9 +141,15 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="btn-glow w-full bg-purple-700 hover:bg-purple-600 text-white py-3 rounded-xl font-semibold transition-all duration-300"
+                className="btn-glow w-full bg-purple-700 hover:bg-purple-600 text-white py-3 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2"
               >
-                {sent ? '✅ Message Sent!' : 'Send Message →'}
+                {sent ? (
+                  <>
+                    <FaCheckCircle /> Message Sent!
+                  </>
+                ) : (
+                  'Send Message →'
+                )}
               </button>
             </form>
           </div>
@@ -154,10 +161,10 @@ export default function Contact() {
 }
 
 // Contact info row
-function ContactItem({ emoji, label, value, href }) {
+function ContactItem({ icon, label, value, href }) {
   const content = (
     <div className="card-hover bg-card rounded-xl p-4 flex items-center gap-4">
-      <span className="text-2xl">{emoji}</span>
+      <span className="text-2xl text-purple-400">{icon}</span>
       <div>
         <p className="text-gray-600 text-xs">{label}</p>
         <p className="text-white text-sm font-medium">{value}</p>
